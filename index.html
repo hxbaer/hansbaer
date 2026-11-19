@@ -1,0 +1,717 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hans X. Baer — Where service meets sales</title>
+<meta name="description" content="Hans X. Baer — commercial and retail leader from Zürich, shaped by luxury boutiques, five-star hotels and premium spirits. Diageo, Louis Vuitton, Montblanc.">
+<meta property="og:title" content="Hans X. Baer — Where service meets sales">
+<meta property="og:description" content="Commercial and retail leader from Zürich, at home in luxury boutiques, five-star hotels and the world of premium spirits.">
+<meta property="og:image" content="https://www.mrbaer.ch/images/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%23121c25%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Georgia,serif%22 font-size=%2221%22 fill=%22%23c9ab7e%22 text-anchor=%22middle%22 letter-spacing=%221%22%3EHXB%3C/text%3E%3C/svg%3E">
+<style>
+  @font-face { font-family: "Cormorant Garamond"; src: url("fonts/cormorant-400.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Cormorant Garamond"; src: url("fonts/cormorant-italic.woff2") format("woff2"); font-weight: 100 900; font-style: italic; font-display: swap; }
+  @font-face { font-family: "Jost"; src: url("fonts/jost-400.woff2") format("woff2"); font-weight: 100 550; font-style: normal; font-display: swap; }
+  @font-face { font-family: "Jost"; src: url("fonts/jost-600.woff2") format("woff2"); font-weight: 551 900; font-style: normal; font-display: swap; }
+  :root {
+    --night: #121c25;
+    --night-2: #1a2732;
+    --ivory: #f5f1e9;
+    --sand: #ebe4d6;
+    --ink: #1d1d1b;
+    --muted: #6f6a61;
+    --brass: #a8875a;
+    --brass-light: #c9ab7e;
+    --line: rgba(29,29,27,.14);
+    --line-light: rgba(245,241,233,.18);
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Jost", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ivory); color: var(--ink);
+    font-family: var(--sans); font-weight: 300; font-size: 16px; line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  .label {
+    font-size: 14px; font-weight: 600; letter-spacing: .24em; text-transform: uppercase;
+    color: var(--brass);
+  }
+  .link {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-size: 11px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase;
+    text-decoration: none; padding-bottom: 6px; border-bottom: 1px solid currentColor;
+    transition: gap .25s, color .25s;
+  }
+  .link:hover { gap: 22px; color: var(--brass); }
+
+  /* Navigation */
+  .nav {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 10;
+    color: var(--ivory);
+  }
+  .nav .wrap {
+    display: flex; align-items: center;
+    padding-top: 30px; padding-bottom: 30px;
+  }
+  .nav .links { display: flex; gap: 34px; }
+  .nav .links a, .nav .cta {
+    font-size: 11px; font-weight: 400; letter-spacing: .24em; text-transform: uppercase;
+    text-decoration: none; opacity: .85;
+  }
+  .nav .links a:hover { opacity: 1; }
+  .nav .links a { font-weight: 600; }
+  .hero-copy .label { font-weight: 500; letter-spacing: .3em; color: #d9bf94; }
+  .nav .links a { position: relative; }
+  .nav .links a::after { content: ""; position: absolute; left: 0; right: .24em; bottom: -7px; height: 1px; background: var(--brass-light); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; }
+  .nav .links a:hover::after, .nav .links a:focus-visible::after { transform: scaleX(1); }
+  .wordmark {
+    font-family: var(--serif); font-size: 22px; letter-spacing: .32em; text-transform: uppercase;
+    text-decoration: none; text-align: center;
+  }
+  .nav .cta {
+    justify-self: end; opacity: 1;
+    border: 1px solid var(--line-light); padding: 12px 22px;
+    transition: background .25s, color .25s;
+  }
+  .nav .cta:hover { background: var(--ivory); color: var(--night); }
+
+  /* Hero */
+  .hero {
+    position: relative; min-height: 100vh; background: var(--night); color: var(--ivory);
+    display: grid; grid-template-columns: 1.05fr .95fr; overflow: hidden;
+  }
+  .hero-copy {
+    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: clamp(140px, 21vh, 230px) 64px 90px max(40px, calc((100vw - 1200px) / 2 + 40px));
+  }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(56px, 7.5vw, 112px); line-height: .98; margin: 26px 0 30px;
+  }
+  .hero h1 em { font-style: italic; color: var(--brass-light); }
+  .hero .tagline { font-size: 18px; max-width: 470px; color: rgba(245,241,233,.78); }
+  .hero .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 30px; margin-top: 44px;
+    font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: rgba(245,241,233,.6);
+  }
+  .hero .link { margin-top: 52px; align-self: flex-start; }
+  .hero-image { position: relative; }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .hero-image::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, var(--night) 0%, rgba(18,28,37,0) 28%);
+  }
+
+  /* Intro */
+  .intro { padding: 110px 0 100px; text-align: center; }
+  .intro h2 {
+    font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4.4vw, 58px);
+    line-height: 1.12; max-width: 900px; margin: 26px auto 34px;
+  }
+  .intro p { max-width: 680px; margin: 0 auto; font-size: 17px; color: #3d3b36; }
+  .intro p + p { margin-top: 16px; }
+  .ornament { width: 1px; height: 48px; background: var(--brass); margin: 44px auto 0; }
+
+  /* Figures */
+  .figures { background: var(--sand); padding: 90px 0; }
+  .figures .row { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .figure { padding: 10px 40px; text-align: center; border-left: 1px solid var(--line); }
+  .figure:first-child { border-left: 0; }
+  .figure .num { font-family: var(--serif); font-size: 64px; line-height: 1; }
+  .figure .lbl { margin-top: 16px; font-size: 14px; color: var(--muted); }
+
+  /* Experience cards */
+  .experience { padding: 140px 0 90px; }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-bottom: 60px; }
+  .head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 4.6vw, 62px); line-height: 1.05; margin-top: 18px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .card {
+    position: relative; background: var(--night); color: var(--ivory);
+    padding: 44px 36px 40px; min-height: 0;
+    display: flex; flex-direction: column;
+    transition: transform .4s;
+  }
+  .card:hover { transform: translateY(-6px); }
+  @supports (grid-template-rows: subgrid) {
+    .card { display: grid; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; align-content: start; }
+  }
+  .card:nth-child(2) { background: var(--night-2); }
+  .card:nth-child(3) { background: #2a2620; }
+  .card:nth-child(4) { background: #23302b; }
+  .card:nth-child(5) { background: #2b2228; }
+  .card .years { font-size: 11px; letter-spacing: .26em; color: var(--brass-light); }
+  .card h3 { font-family: var(--serif); font-weight: 400; font-size: 38px; line-height: 1.08; margin: 22px 0 10px; }
+  .card .role { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: rgba(245,241,233,.62); }
+  .card ul { list-style: none; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line-light); }
+  .card li { font-size: 14px; color: rgba(245,241,233,.82); position: relative; padding-left: 18px; }
+  .card li + li { margin-top: 10px; }
+  .card li::before { content: ""; position: absolute; left: 0; top: .85em; width: 8px; height: 1px; background: var(--brass-light); }
+  .card.wide { grid-column: span 2; }
+  .stations { list-style: none; margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line-light); }
+  .card .stations li { padding-left: 0; }
+  .card .stations li::before { display: none; }
+  .card .stations li + li { margin-top: 16px; }
+  .stations strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 22px; color: var(--ivory); line-height: 1.2; }
+  .stations span { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: rgba(245,241,233,.62); }
+
+  /* Focus band */
+  .band { display: grid; grid-template-columns: 1fr 1fr; min-height: 640px; }
+  .band-image { background: var(--night); position: relative; overflow: hidden; }
+  .band-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; filter: grayscale(.25) brightness(.85); }
+  .band-copy { background: var(--sand); padding: 110px 80px; display: flex; flex-direction: column; justify-content: center; }
+  .band-copy h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 3.8vw, 52px); line-height: 1.1; margin: 20px 0 44px; }
+  .pillar { padding: 24px 0; border-top: 1px solid var(--line); }
+  .pillar h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; line-height: 1.2; }
+  .pillar p { font-size: 15px; color: #45423c; margin-top: 6px; }
+
+  /* Travel */
+  .travel { background: var(--ivory); color: var(--ink); padding: 113px 0 120px; }
+  .travel .label { color: var(--brass); }
+  .travel h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(34px, 4vw, 54px); line-height: 1.1; margin: 18px 0 20px; }
+  .travel .travel-text { max-width: 620px; font-size: 17px; color: #3d3b36; }
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 60px; }
+  .travel .travel-text + .travel-text { margin-top: 16px; }
+  .gallery img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+  .gallery .shot { position: relative; overflow: hidden; }
+  .gallery .shot::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, rgba(18,28,37,0) 55%, rgba(18,28,37,.38) 100%); }
+
+  /* Background */
+  .background { padding: 0 0 110px; }
+  .details { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 40px; }
+  .detail { border-top: 1px solid var(--brass); padding-top: 24px; }
+  .detail .label { color: var(--muted); font-size: 11.5px; font-weight: 500; }
+  .detail p { font-family: var(--serif); font-size: 23px; line-height: 1.3; margin-top: 14px; }
+  .detail p + p { margin-top: 20px; }
+  .detail small { display: block; font-family: var(--sans); font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+  /* Contact */
+  .contact { background: var(--night); color: var(--ivory); padding: 150px 0 98px; text-align: center; }
+  .contact blockquote { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(28px, 3.6vw, 48px); line-height: 1.2; max-width: 920px; margin: 0 auto; }
+  .contact blockquote::before { content: "\201C\2009"; color: var(--brass-light); }
+  .contact blockquote::after { content: "\200A\201D"; color: var(--brass-light); }
+  .contact cite { display: block; margin-top: 34px; font-style: normal; font-size: 14px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: #d9bf94; }
+  .contact .btn {
+    display: inline-block; margin-top: 98px; padding: 18px 44px;
+    background: var(--brass); color: var(--ivory); text-decoration: none;
+    font-size: 11px; font-weight: 600; letter-spacing: .28em; text-transform: uppercase;
+    transition: background .25s;
+  }
+  .contact .btn:hover { background: #b9976a; }
+  .contact .btn { width: 200px; padding-left: 0; padding-right: 0; text-align: center; border: 1px solid var(--brass); }
+  .contact .btn:not(.ghost):hover { border-color: #b9976a; }
+  .contact .btn.ghost { background: transparent; color: var(--ivory); border: 1px solid var(--line-light); margin-left: 14px; }
+  .contact .btn.ghost:hover { background: var(--ivory); color: var(--night); }
+  .contact .btn.li { background: #25384a; border-color: #25384a; }
+  .contact .btn.ig { background: #4a2830; border-color: #4a2830; }
+  .contact .btn.li:hover { background: #33495d; border-color: #33495d; color: var(--ivory); }
+  .contact .btn.ig:hover { background: #5d343d; border-color: #5d343d; color: var(--ivory); }
+  @media (max-width: 760px) { .contact .btn { display: block; width: 100%; max-width: 280px; margin: 65px auto 0; } .contact .btn.ghost { margin: 14px auto 0; } }
+  .contact .mail { margin-top: 24px; font-size: 14px; color: rgba(245,241,233,.6); }
+  .contact .mail a { text-decoration: none; border-bottom: 1px solid var(--line-light); }
+
+  footer { background: var(--night); color: rgba(245,241,233,.5); border-top: 1px solid var(--line-light); }
+  footer .wrap { display: flex; justify-content: center; text-align: center; gap: 20px; padding-top: 34px; padding-bottom: 40px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+  footer .wordmark { font-size: 15px; color: var(--ivory); }
+
+  @media (max-width: 980px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+    .card.wide { grid-column: span 2; }
+    .details { grid-template-columns: 1fr 1fr; }
+    .band-copy { padding: 90px 48px; }
+  }
+  @media (max-width: 760px) {
+    .wrap { padding: 0 24px; }
+    .nav { top: calc(66vh + 80px); }
+    .nav .wrap { padding-top: 0; padding-bottom: 0; }
+    .nav .links { flex-wrap: nowrap; justify-content: space-between; gap: 10px; width: 100%; }
+    .nav .links a { font-size: 9.5px; letter-spacing: .1em; white-space: nowrap; }
+    .nav .links a::after { right: .1em; }
+    .wordmark { text-align: left; font-size: 17px; }
+    .nav .cta { padding: 10px 14px; letter-spacing: .18em; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero-image { order: -1; height: 66vh; }
+    .hero-image::after { background: linear-gradient(0deg, var(--night) 0%, rgba(18,28,37,0) 28%); }
+    .hero h1 { font-size: clamp(38px, 12.5vw, 60px); margin: 20px 0 24px; }
+    .hero .tagline { font-size: 16.5px; }
+    .hero .meta { margin-top: 32px; }
+    .hero .link { margin-top: 40px; }
+    .hero-copy { padding: 140px 24px 72px; margin-top: 0; position: relative; z-index: 2; }
+    .intro { padding: 80px 0 70px; text-align: left; }
+    .intro h2 { font-size: 32px; margin: 18px 0 26px; }
+    .intro p { font-size: 16px; }
+    .figures { padding: 50px 0; }
+    .figure .num { font-size: 54px; }
+    .head h2 br { display: none; }
+    .head h2 { font-size: 36px; }
+    .head { margin-bottom: 40px; }
+    .card { padding: 34px 24px 32px; }
+    .card h3 { font-size: 32px; }
+    .card ul { margin-top: 24px; padding-top: 22px; }
+    .contact blockquote { font-size: 26px; }
+    .detail p { font-size: 21px; }
+    footer a { white-space: nowrap; display: block; margin-top: 6px; }
+    footer .sep { display: none; }
+    .hero-copy .label { font-size: 12px; letter-spacing: .16em; }
+    .figures .row { grid-template-columns: 1fr; }
+    .figure { border-left: 0; border-top: 1px solid var(--line); padding: 34px 10px; }
+    .figure:first-child { border-top: 0; }
+    .experience { padding: 80px 0; }
+    .head { flex-direction: column; align-items: flex-start; }
+    .cards { grid-template-columns: 1fr; }
+    .card, .card.wide { grid-column: auto; min-height: 0; }
+    .card h3 { margin-top: 18px; }
+    .band { grid-template-columns: 1fr; }
+    .band-image { height: 420px; }
+    .band-copy { padding: 80px 24px; }
+    .background { padding: 80px 0; }
+    .details { grid-template-columns: 1fr; gap: 30px; }
+    .contact { padding: 90px 0 65px; }
+    footer .wrap { flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+  }
+  @media (max-width: 980px) { .gallery { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 760px) { .travel { padding: 83px 0 90px; } .gallery { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 40px; } }
+  @media (max-width: 360px) { .wrap { padding: 0 18px; } .nav .links a { font-size: 9px; letter-spacing: .06em; } }
+  @media (max-width: 760px) { .background { padding-top: 0; } .experience { padding-bottom: 56px; } }
+  /* Lightbox */
+  .gallery .shot { cursor: zoom-in; }
+  .lb { position: fixed; inset: 0; z-index: 100; background: rgba(18,28,37,.97); display: none; align-items: center; justify-content: center; }
+  .lb.open { display: flex; }
+  .lb img { max-width: 90vw; max-height: 82vh; object-fit: contain; -webkit-user-select: none; user-select: none; }
+  .lb button { position: absolute; background: none; border: 0; color: var(--ivory); cursor: pointer; font-family: var(--sans); font-weight: 300; line-height: 1; opacity: .75; padding: 14px; transition: opacity .2s, color .2s; }
+  .lb button:hover { opacity: 1; color: var(--brass-light); }
+  .lb .lb-close { top: 12px; right: 16px; font-size: 38px; }
+  .lb .lb-prev, .lb .lb-next { top: 50%; transform: translateY(-50%); font-size: 52px; }
+  .lb .lb-prev { left: 10px; }
+  .lb .lb-next { right: 10px; }
+  .lb .lb-count { position: absolute; bottom: 22px; left: 0; right: 0; text-align: center; font-size: 11px; letter-spacing: .24em; color: var(--brass-light); }
+  .lb .lb-count .lb-cur { color: var(--ivory); }
+  @media (max-width: 760px) { .lb .lb-prev, .lb .lb-next { display: none; } .lb img { max-width: 100vw; max-height: 78vh; } }
+  /* Social icons */
+  .contact .social { display: flex; justify-content: center; gap: 22px; margin-top: 98px; }
+  .contact .ico { width: 56px; height: 56px; border: 1.5px solid var(--brass-light); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: var(--brass-light); transition: background .25s, color .25s, border-color .25s; }
+  .contact .ico svg { width: 22px; height: 22px; display: block; }
+  .contact .ico:hover, .contact .ico:focus-visible { background: var(--brass-light); border-color: var(--brass-light); color: var(--night); }
+  @media (max-width: 760px) { .contact .social { margin-top: 65px; gap: 18px; } }
+  /* Experience timeline */
+  .tl { list-style: none; position: relative; max-width: 1040px; margin: 0 auto; }
+  .tl::before { content: ""; position: absolute; top: 6px; bottom: 6px; left: 50%; width: 1px; background: rgba(168,135,90,.45); }
+  .tl-item { position: relative; width: 50%; padding-right: 64px; }
+  .tl-item + .tl-item { margin-top: 26px; }
+  .tl-item:nth-child(even) { margin-left: 50%; padding-right: 0; padding-left: 64px; }
+  .tl-item::after { content: ""; position: absolute; top: 7px; right: -6px; width: 11px; height: 11px; border-radius: 50%; background: var(--ivory); border: 1px solid var(--brass); transition: background .3s; }
+  .tl-item:nth-child(even)::after { right: auto; left: -6px; }
+  .tl-item.open::after { background: var(--brass); }
+  .tl-head { display: block; width: 100%; position: relative; text-align: left; background: none; border: 0; padding: 0 44px 22px 0; cursor: pointer; color: inherit; font: inherit; border-bottom: 1px solid var(--line); }
+  .tl-years { display: block; font-size: 11px; font-weight: 500; letter-spacing: .26em; color: var(--brass); }
+  .tl-co { display: block; font-family: var(--serif); font-weight: 400; font-size: 36px; line-height: 1.1; margin-top: 10px; transition: color .25s; }
+  .tl-role { display: block; margin-top: 8px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); line-height: 1.6; }
+  .tl-head:hover .tl-co, .tl-head:focus-visible .tl-co { color: var(--brass); }
+  .tl-toggle { position: absolute; right: 0; top: 30px; width: 30px; height: 30px; border: 1px solid rgba(168,135,90,.6); border-radius: 50%; }
+  .tl-toggle::before, .tl-toggle::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 1px; background: var(--brass); transform: translate(-50%, -50%); transition: transform .3s; }
+  .tl-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .tl-item.open .tl-toggle::after { transform: translate(-50%, -50%) rotate(0deg); }
+  .tl-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s ease; }
+  .tl-item.open .tl-body { grid-template-rows: 1fr; }
+  .tl-body > div { overflow: hidden; }
+  .tl-body ul { list-style: none; padding: 22px 0 6px; }
+  .tl-body li { position: relative; padding-left: 18px; font-size: 15px; color: #3d3b36; }
+  .tl-body li + li { margin-top: 10px; }
+  .tl-body li::before { content: ""; position: absolute; left: 0; top: .9em; width: 8px; height: 1px; background: var(--brass); }
+  @media (max-width: 760px) {
+    .tl::before { left: 5px; }
+    .tl-item, .tl-item:nth-child(even) { width: 100%; margin-left: 0; padding: 0 0 0 34px; }
+    .tl-item::after, .tl-item:nth-child(even)::after { left: 0; right: auto; }
+    .tl-co { font-size: 30px; }
+    .tl-toggle { top: 26px; }
+  }  @media (max-width: 760px) { .hero .meta { flex-direction: column; gap: 6px; } }
+  /* Menu size */
+  .nav .links a { font-size: 12px; }
+  @media (max-width: 760px) { .nav .links a { font-size: 10.5px; } }
+  @media (max-width: 360px) { .nav .links a { font-size: 9px; } }
+  /* Motion: reveal on scroll */
+  .js-motion .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+  .js-motion .reveal.in { opacity: 1; transform: none; }
+  section[id] { scroll-margin-top: 64px; }
+  /* Sticky menu */
+  .nav.sticky-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: rgba(18,28,37,.96); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line-light); transform: translateY(-101%); transition: transform .35s ease; }
+  .nav.sticky-nav.show { transform: none; }
+  .nav.sticky-nav .wrap { justify-content: center; padding-top: 18px; padding-bottom: 18px; }
+  .nav.sticky-nav .links a.active { opacity: 1; color: var(--brass-light); }
+  .nav.sticky-nav .links a.active::after { transform: scaleX(1); }
+  @media (max-width: 760px) { .nav.sticky-nav { top: 0; } .nav.sticky-nav .wrap { padding-top: 15px; padding-bottom: 15px; } }</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#travel">Travel</a>
+      <a href="#contact">Social</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="label">Hospitality · Luxury Retail · Spirits</div>
+    <h1>Hans X. <em>Baer</em></h1>
+    <p class="tagline">Hospitality shaped me and led me to luxury retail and premium spirits. What hasn’t changed is what I enjoy most: working with people from all kinds of backgrounds and cultures.</p>
+    <div class="meta">
+      <span>Born in Zürich</span>
+      <span>Based in Frankfurt</span>
+      <span>German &amp; English</span>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="images/hans-baer-suit.jpg" alt="Portrait of Hans X. Baer in a pinstripe suit" width="1024" height="1400">
+  </div>
+</section>
+
+<section class="intro" id="about">
+  <div class="wrap">
+    <div class="label">About</div>
+    <h2>From guest to host.</h2>
+    <p>I grew up in Switzerland with Swiss and Asian roots. My surroundings, at school and at home, were always international. Growing up, I stayed in some beautiful hotels, and at some point I became more interested in the other side of the front desk: what it takes to be a good host.</p>
+    <p>That led me to study hotel management at Les Roches and to start out in hotel front offices in Frankfurt, Berlin, Munich and Gstaad. From there I moved into luxury retail, first at Montblanc in Zürich, then at Louis Vuitton in Stuttgart, and most recently to Diageo, where I looked after premium bars, restaurants and hotels in two territories.</p>
+    <p>Whether at a front desk, in a boutique or with a bar team, the job has felt much the same to me: look after people properly, and set the standard yourself.</p>
+  </div>
+</section>
+
+<section class="figures">
+  <div class="wrap row">
+    <div class="figure">
+      <div class="num">~110</div>
+      <div class="lbl">Accounts per Diageo territory in Frankfurt and Stuttgart, <span style="white-space:nowrap">each up from 70–80</span></div>
+    </div>
+    <div class="figure">
+      <div class="num">20</div>
+      <div class="lbl">Store team at Louis Vuitton Stuttgart, with <span style="white-space:nowrap">day-to-day</span> lead of store operations</div>
+    </div>
+    <div class="figure">
+      <div class="num">+40%</div>
+      <div class="lbl">Average transaction value at Montblanc Zürich</div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="label">Experience</div>
+        <h2>A decade in hospitality, <br>luxury retail and spirits</h2>
+      </div>
+    </div>
+    <ol class="tl">
+      <li class="tl-item open">
+        <button class="tl-head" type="button" aria-expanded="true">
+          <span class="tl-years">2023 – 2026</span>
+          <span class="tl-co">Diageo</span>
+          <span class="tl-role">Account Manager, Trend Leading Accounts · Frankfurt &amp; Stuttgart</span>
+          <span class="tl-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="tl-body"><div>
+          <ul>
+            <li>Full territory responsibility for trend-leading and luxury accounts: client management, new business and outlet prioritisation.</li>
+            <li>Selected to build the Frankfurt territory, not actively developed for around four years; grew the account base in each territory, Frankfurt and Stuttgart, from 70–80 to around 110.</li>
+            <li>Led both territories in parallel, each with its own budget responsibility.</li>
+            <li>Segmented the portfolio by priority and volume; around 80–100 contract negotiations and regular brand activations.</li>
+          </ul>
+        </div></div>
+      </li>
+      <li class="tl-item">
+        <button class="tl-head" type="button" aria-expanded="false">
+          <span class="tl-years">2021 – 2023</span>
+          <span class="tl-co">Louis Vuitton</span>
+          <span class="tl-role">Team Manager, Menswear, Watches &amp; Travel · Stuttgart</span>
+          <span class="tl-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="tl-body"><div>
+          <ul>
+            <li>Led a team of 12 in a store of 20, with day-to-day responsibility for store operations.</li>
+            <li>Conducted recruiting interviews.</li>
+            <li>Assortment decisions, annual planning and client events.</li>
+            <li>Stock, replenishment and regional VM standards.</li>
+          </ul>
+        </div></div>
+      </li>
+      <li class="tl-item">
+        <button class="tl-head" type="button" aria-expanded="false">
+          <span class="tl-years">2020 – 2021</span>
+          <span class="tl-co">Le Grand Bellevue</span>
+          <span class="tl-role">Assistant Front Office Manager · Gstaad</span>
+          <span class="tl-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="tl-body"><div>
+          <ul>
+            <li>Deputy head of front office, guest services, valet and concierge, a team of 10.</li>
+            <li>Five-star superior hotel with 57 rooms and suites.</li>
+          </ul>
+        </div></div>
+      </li>
+      <li class="tl-item">
+        <button class="tl-head" type="button" aria-expanded="false">
+          <span class="tl-years">2019 – 2020</span>
+          <span class="tl-co">Montblanc</span>
+          <span class="tl-role">Assistant Store Manager · Zürich</span>
+          <span class="tl-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="tl-body"><div>
+          <ul>
+            <li>Regularly deputised for the store manager in a team of seven; responsible for rostering, boutique KPIs and onboarding.</li>
+            <li>Raised the average transaction value by 40%.</li>
+            <li>Local client share from around 70% to over 80%.</li>
+          </ul>
+        </div></div>
+      </li>
+      <li class="tl-item">
+        <button class="tl-head" type="button" aria-expanded="false">
+          <span class="tl-years">2016 – 2018</span>
+          <span class="tl-co">Hospitality</span>
+          <span class="tl-role">Three cities, three roles</span>
+          <span class="tl-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="tl-body"><div>
+          <ul>
+            <li>Kempinski Frankfurt: Rooms Division Management Trainee.</li>
+            <li>Radisson Blu Berlin: Front Office Agent.</li>
+            <li>Steigenberger Munich: Shift Leader in the opening team.</li>
+          </ul>
+        </div></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="background">
+  <div class="wrap">
+    <div class="label">Background</div>
+    <div class="details">
+      <div class="detail">
+        <div class="label">Education</div>
+        <p>Bachelor in International Hotel Management<small>Les Roches Global Hospitality Education, 2012–2015</small></p>
+        <p>Exchange semester<small>Glion Institute of Higher Education, 2014</small></p>
+      </div>
+      <div class="detail">
+        <div class="label">Languages</div>
+        <p>German and English, both at native level</p>
+      </div>
+      <div class="detail">
+        <div class="label">Systems</div>
+        <p>Salesforce&nbsp;CRM, Opera&nbsp;PMS, Microsoft&nbsp;365</p>
+      </div>
+      <div class="detail">
+        <div class="label">Military Service</div>
+        <p>Sergeant, Swiss&nbsp;Armed&nbsp;Forces<small>Squad leader</small></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="expertise">
+  <div class="band-image">
+    <img src="images/hans-baer-focus.jpg" alt="Hans X. Baer" loading="lazy">
+  </div>
+  <div class="band-copy">
+    <div class="label">Expertise</div>
+    <h2>What I know best</h2>
+    <div class="pillar">
+      <h3>Retail leadership</h3>
+      <p>Leading a team on the shop floor: hiring the right people, setting standards and running the store day to day, as I did at Montblanc and Louis Vuitton.</p>
+    </div>
+    <div class="pillar">
+      <h3>Commercial strategy</h3>
+      <p>Deciding where time and budget go. At Diageo I developed two territories, chose which accounts to prioritise and negotiated the agreements behind them.</p>
+    </div>
+    <div class="pillar">
+      <h3>Guest experience</h3>
+      <p>Knowing guests well enough that they come back. It started at the hotel front office and still shapes how I approach clienteling and events.</p>
+    </div>
+  </div>
+</section>
+
+<section class="travel" id="travel">
+  <div class="wrap">
+    <div class="label">Travel</div>
+    <h2>Away from work</h2>
+    <p class="travel-text">I was given the chance to travel from a young age, and much of it took me to Asia. That was more than twenty years ago, before the world felt as connected as it does now. For a European, Asia was still far away and far less familiar than it seems today.</p>
+    <p class="travel-text">Those trips shaped how I see things. What stays with me is rarely the sights, but the small things: how a city starts its day, how people host, what ends up on the table. <span style="white-space:nowrap">I still travel whenever I can.</span></p>
+    <div class="gallery">
+      <div class="shot"><img src="images/singapore.jpg" alt="Marina Bay at sunset, Singapore" loading="lazy"></div>
+      <div class="shot"><img src="images/nusa-penida.jpg" alt="Kelingking cliff, Nusa Penida" loading="lazy"></div>
+      <div class="shot"><img src="images/dumplings.jpg" alt="Xiao long bao in a bamboo steamer" loading="lazy"></div>
+      <div class="shot"><img src="images/beach.jpg" alt="Boats on a beach in Indonesia" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <blockquote>Those who think in boundaries will always be defined by them. True growth comes from the connections we build beyond them.</blockquote>
+    <cite>Hans X.<span style="margin-left:-.12em"> </span>Baer</cite>
+    <div class="social">
+      <a class="ico" href="mailto:hans@mrbaer.ch?subject=Enquiry%20via%20mrbaer.ch" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a>
+      <a class="ico" href="https://www.linkedin.com/in/baerhans/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="9.5" width="3.2" height="10.5"/><circle cx="5.6" cy="5.6" r="1.9"/><path d="M10.2 9.5h3.1v1.5c.5-.9 1.7-1.8 3.4-1.8 3.2 0 3.8 2.1 3.8 4.8V20h-3.2v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20h-3.2z"/></svg></a>
+      <a class="ico" href="https://www.instagram.com/mrbaer.ch/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor" stroke="none"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Hans X. Baer<span class="sep"> · </span><a href="impressum.html" style="text-decoration:none">Legal Notice &amp; Privacy</a></span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous photo">&lsaquo;</button>
+  <img alt="">
+  <button class="lb-next" aria-label="Next photo">&rsaquo;</button>
+  <div class="lb-count"></div>
+</div>
+<script>
+(function () {
+  var shots = [].slice.call(document.querySelectorAll('.gallery .shot img'));
+  var lb = document.getElementById('lb');
+  if (!shots.length || !lb) return;
+  var img = lb.querySelector('img'), cnt = lb.querySelector('.lb-count'), i = 0, x0 = null;
+  function big(s) { return s; }
+  function show(n) { i = (n + shots.length) % shots.length; img.src = big(shots[i].src); img.alt = shots[i].alt; cnt.innerHTML = '<span class="lb-cur">' + (i + 1) + '</span> / ' + shots.length; }
+  function open(n) { show(n); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  shots.forEach(function (s, n) { s.parentNode.addEventListener('click', function () { open(n); }); });
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function (e) { e.stopPropagation(); show(i - 1); });
+  lb.querySelector('.lb-next').addEventListener('click', function (e) { e.stopPropagation(); show(i + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(i - 1);
+    if (e.key === 'ArrowRight') show(i + 1);
+  });
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+    x0 = null;
+  });
+})();
+</script>
+<script>
+(function () {
+  [].forEach.call(document.querySelectorAll('.tl-head'), function (b) {
+    b.addEventListener('click', function () {
+      var item = b.parentNode, open = !item.classList.contains('open');
+      item.classList.toggle('open', open);
+      b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();
+</script><script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO = 'IntersectionObserver' in window;
+
+  /* 1. Reveal on scroll */
+  if (hasIO && !reduce) {
+    document.documentElement.classList.add('js-motion');
+    var sel = '.intro .label, .intro h2, .intro p, .figure, .experience .head, .tl-item, .background > .wrap > .label, .detail, .band-copy > *, .travel .label, .travel h2, .travel-text, .gallery .shot, .contact blockquote, .contact cite, .contact .social';
+    var els = [].slice.call(document.querySelectorAll(sel));
+    els.forEach(function (el) {
+      el.classList.add('reveal');
+      var sibs = [].slice.call(el.parentNode.children).filter(function (c) { return c.classList.contains('reveal'); });
+      var i = sibs.indexOf(el);
+      el.style.transitionDelay = Math.min(i, 5) * 90 + 'ms';
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  /* 2. Sticky menu with active section */
+  var nav = document.querySelector('.nav');
+  var hero = document.querySelector('.hero');
+  if (nav && hero) {
+    var bar = document.createElement('div');
+    bar.className = 'nav sticky-nav';
+    bar.setAttribute('aria-hidden', 'true');
+    var wrap = document.createElement('div');
+    wrap.className = 'wrap';
+    var links = nav.querySelector('.links').cloneNode(true);
+    [].forEach.call(links.querySelectorAll('a'), function (a) { a.setAttribute('tabindex', '-1'); });
+    wrap.appendChild(links);
+    bar.appendChild(wrap);
+    document.body.appendChild(bar);
+    var onScroll = function () {
+      var show = window.scrollY > hero.offsetHeight - 80;
+      bar.classList.toggle('show', show);
+      bar.setAttribute('aria-hidden', show ? 'false' : 'true');
+      [].forEach.call(links.querySelectorAll('a'), function (a) { a.setAttribute('tabindex', show ? '0' : '-1'); });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    if (hasIO) {
+      var map = {};
+      [].forEach.call(links.querySelectorAll('a'), function (a) { map[a.getAttribute('href').slice(1)] = a; });
+      var active = function (id) {
+        [].forEach.call(links.querySelectorAll('a'), function (a) { a.classList.remove('active'); });
+        if (map[id]) map[id].classList.add('active');
+      };
+      var sio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) active(e.target.id); });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) sio.observe(s); });
+      var bgSec = document.querySelector('section.background');
+      if (bgSec) {
+        var bio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) active('experience'); });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+        bio.observe(bgSec);
+      }
+    }
+  }
+
+  /* 3. Count-up figures */
+  if (hasIO && !reduce) {
+    [].forEach.call(document.querySelectorAll('.figure .num'), function (n) {
+      var m = n.textContent.trim().match(/^(\D*)(\d+)(\D*)$/);
+      if (!m) return;
+      var pre = m[1], target = parseInt(m[2], 10), post = m[3];
+      n.style.minWidth = n.offsetWidth + 'px';
+      n.textContent = pre + '0' + post;
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          cio.disconnect();
+          var t0 = null, dur = 1400;
+          var step = function (ts) {
+            if (!t0) t0 = ts;
+            var p = Math.min((ts - t0) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            n.textContent = pre + Math.round(target * eased) + post;
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.6 });
+      cio.observe(n);
+    });
+  }
+})();
+</script></body>
+</html>
