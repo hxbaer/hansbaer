@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mrbaer.ch/sitemap.xml
+Sitemap: https://www.hansbaer.ch/sitemap.xml
