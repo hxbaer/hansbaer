@@ -1,0 +1,115 @@
+# Pages CMS – https://app.pagescms.org (Login mit GitHub, Repo hxbaer/hansbaer wählen)
+media:
+  input: images
+  output: /images
+  extensions: [webp, jpg, jpeg, png, svg]
+content:
+  - name: home
+    label: Startseite
+    type: file
+    path: _data/home.yml
+    fields:
+      - name: hero
+        label: Kopfbereich
+        type: object
+        fields:
+          - { name: label, label: Zeile über dem Namen, type: string }
+          - { name: name_first, label: Vorname(n), type: string }
+          - { name: name_last, label: Nachname (kursiv), type: string }
+          - { name: tagline, label: Einleitung, type: text }
+          - { name: facts, label: Kurzfakten, type: string, list: true }
+          - { name: image, label: Porträt, type: image, description: "Hochformat, ca. 1024 × 1400 px" }
+          - { name: image_alt, label: Bildbeschreibung (Alt-Text), type: string }
+      - name: about
+        label: About
+        type: object
+        fields:
+          - { name: label, label: Rubrik, type: string }
+          - { name: heading, label: Überschrift, type: string }
+          - { name: paragraphs, label: Absätze, type: text, list: true }
+      - name: figures
+        label: Kennzahlen
+        type: object
+        list: true
+        fields:
+          - { name: number, label: Zahl, type: string, description: "z.B. ~110, 20, +40% – zählt beim Scrollen hoch" }
+          - { name: text, label: Beschreibung (HTML erlaubt), type: text }
+      - name: experience
+        label: Erfahrung
+        type: object
+        fields:
+          - { name: label, label: Rubrik, type: string }
+          - { name: heading, label: "Überschrift (HTML erlaubt, <br> = Zeilenumbruch)", type: string }
+          - name: jobs
+            label: Stationen
+            type: object
+            list: true
+            description: Die erste Station ist beim Laden aufgeklappt.
+            fields:
+              - { name: years, label: Zeitraum, type: string }
+              - { name: company, label: Unternehmen, type: string }
+              - { name: role, label: Rolle · Ort, type: string }
+              - { name: points, label: Stichpunkte, type: text, list: true }
+      - name: background
+        label: Hintergrund
+        type: object
+        fields:
+          - { name: label, label: Rubrik, type: string }
+          - name: blocks
+            label: Blöcke
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Titel, type: string }
+              - name: entries
+                label: Einträge
+                type: object
+                list: true
+                fields:
+                  - { name: text, label: Text (HTML erlaubt), type: string }
+                  - { name: note, label: Zusatz (klein darunter), type: string }
+      - name: expertise
+        label: Expertise
+        type: object
+        fields:
+          - { name: label, label: Rubrik, type: string }
+          - { name: heading, label: Überschrift, type: string }
+          - { name: image, label: Bild, type: image, description: "Hochformat, ca. 1000 × 1200 px" }
+          - { name: image_alt, label: Bildbeschreibung (Alt-Text), type: string }
+          - name: pillars
+            label: Schwerpunkte
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Titel, type: string }
+              - { name: text, label: Text, type: text }
+      - name: travel
+        label: Reisen
+        type: object
+        fields:
+          - { name: label, label: Rubrik, type: string }
+          - { name: heading, label: Überschrift, type: string }
+          - { name: paragraphs, label: Absätze (HTML erlaubt), type: text, list: true }
+          - name: photos
+            label: Fotos
+            type: object
+            list: true
+            fields:
+              - { name: image, label: Foto, type: image, description: "Querformat 4:3, ca. 1600 × 1200 px" }
+              - { name: alt, label: Bildbeschreibung (Alt-Text), type: string }
+      - name: contact
+        label: Kontakt
+        type: object
+        fields:
+          - { name: quote, label: Zitat, type: text }
+          - { name: email, label: E-Mail, type: string }
+          - { name: linkedin, label: LinkedIn-Link, type: string }
+      - name: seo
+        label: SEO & Teilen
+        type: object
+        fields:
+          - { name: title, label: "Seitentitel (Browser-Tab, Google)", type: string }
+          - { name: description, label: Beschreibung für Google, type: text }
+          - { name: share_description, label: Beschreibung in Link-Vorschauen, type: text }
+          - { name: share_image, label: Vorschaubild, type: image, description: "1024 × 1024 px, JPG" }
+          - { name: share_image_alt, label: Alt-Text des Vorschaubilds, type: string }

@@ -1,20 +1,23 @@
-<!doctype html>
+---
+layout: null
+---
+{% assign d = site.data.home %}<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hans X. Baer — Where service meets sales</title>
-<meta name="description" content="Hans X. Baer — born in Zürich, based in Frankfurt. A decade in hospitality, luxury retail and premium spirits, with Diageo, Louis Vuitton and Montblanc.">
+<title>{{ d.seo.title | escape }}</title>
+<meta name="description" content="{{ d.seo.description | escape }}">
 <link rel="canonical" href="https://www.hansbaer.ch/">
-<meta property="og:title" content="Hans X. Baer — Where service meets sales">
-<meta property="og:description" content="Hospitality shaped me and led me to luxury retail and premium spirits. Born in Zürich, based in Frankfurt.">
+<meta property="og:title" content="{{ d.seo.title | escape }}">
+<meta property="og:description" content="{{ d.seo.share_description | escape }}">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://www.hansbaer.ch/">
 <meta property="og:site_name" content="Hans X. Baer">
-<meta property="og:image" content="https://www.hansbaer.ch/images/og.jpg">
+<meta property="og:image" content="https://www.hansbaer.ch{{ d.seo.share_image }}">
 <meta property="og:image:width" content="1024">
 <meta property="og:image:height" content="1024">
-<meta property="og:image:alt" content="Portrait of Hans X. Baer">
+<meta property="og:image:alt" content="{{ d.seo.share_image_alt | escape }}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/cormorant-400.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
@@ -374,44 +377,38 @@
 
 <section class="hero">
   <div class="hero-copy">
-    <div class="label">Hospitality · Luxury Retail · Spirits</div>
-    <h1>Hans X. <em>Baer</em></h1>
-    <p class="tagline">Hospitality shaped me and led me to luxury retail and premium spirits. What hasn’t changed is what I enjoy most: working with people from all kinds of backgrounds and cultures.</p>
+    <div class="label">{{ d.hero.label | escape }}</div>
+    <h1>{{ d.hero.name_first | escape }} <em>{{ d.hero.name_last | escape }}</em></h1>
+    <p class="tagline">{{ d.hero.tagline | escape }}</p>
     <div class="meta">
-      <span>Born in Zürich</span>
-      <span>Based in Frankfurt</span>
-      <span>German &amp; English</span>
+{%- for fact in d.hero.facts %}
+      <span>{{ fact | escape }}</span>
+{%- endfor %}
     </div>
   </div>
   <div class="hero-image">
-    <img src="images/hans-baer-suit.webp" alt="Portrait of Hans X. Baer in a pinstripe suit" width="1024" height="1400" fetchpriority="high">
+    <img src="{{ d.hero.image }}" alt="{{ d.hero.image_alt | escape }}" width="1024" height="1400" fetchpriority="high">
   </div>
 </section>
 
 <section class="intro" id="about">
   <div class="wrap">
-    <div class="label">About</div>
-    <h2>From guest to host.</h2>
-    <p>I grew up in Switzerland with Swiss and Asian roots. My surroundings, at school and at home, were always international. Growing up, I stayed in some beautiful hotels, and at some point I became more interested in the other side of the front desk: what it takes to be a good host.</p>
-    <p>That led me to study hotel management at Les Roches and to start out in hotel front offices in Frankfurt, Berlin, Munich and Gstaad. From there I moved into luxury retail, first at Montblanc in Zürich, then at Louis Vuitton in Stuttgart, and most recently to Diageo, where I looked after premium bars, restaurants and hotels in two territories.</p>
-    <p>Whether at a front desk, in a boutique or with a bar team, the job has felt much the same to me: look after people properly, and set the standard yourself.</p>
+    <div class="label">{{ d.about.label | escape }}</div>
+    <h2>{{ d.about.heading | escape }}</h2>
+{%- for p in d.about.paragraphs %}
+    <p>{{ p | escape }}</p>
+{%- endfor %}
   </div>
 </section>
 
 <section class="figures">
   <div class="wrap row">
+{%- for f in d.figures %}
     <div class="figure">
-      <div class="num">~110</div>
-      <div class="lbl">Accounts per Diageo territory in Frankfurt and Stuttgart, <span style="white-space:nowrap">each up from 70–80</span></div>
+      <div class="num">{{ f.number | escape }}</div>
+      <div class="lbl">{{ f.text }}</div>
     </div>
-    <div class="figure">
-      <div class="num">20</div>
-      <div class="lbl">Store team at Louis Vuitton Stuttgart, with <span style="white-space:nowrap">day-to-day</span> lead of store operations</div>
-    </div>
-    <div class="figure">
-      <div class="num">+40%</div>
-      <div class="lbl">Average transaction value at Montblanc Zürich</div>
-    </div>
+{%- endfor %}
   </div>
 </section>
 
@@ -419,160 +416,86 @@
   <div class="wrap">
     <div class="head">
       <div>
-        <div class="label">Experience</div>
-        <h2>A decade in hospitality, <br>luxury retail and spirits</h2>
+        <div class="label">{{ d.experience.label | escape }}</div>
+        <h2>{{ d.experience.heading }}</h2>
       </div>
     </div>
     <ol class="tl">
-      <li class="tl-item open">
-        <button class="tl-head" type="button" aria-expanded="true">
-          <span class="tl-years">2023 – 2026</span>
-          <span class="tl-co">Diageo</span>
-          <span class="tl-role">Account Manager, Trend Leading Accounts · Frankfurt &amp; Stuttgart</span>
+{%- for job in d.experience.jobs %}
+      <li class="tl-item{% if forloop.first %} open{% endif %}">
+        <button class="tl-head" type="button" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}">
+          <span class="tl-years">{{ job.years | escape }}</span>
+          <span class="tl-co">{{ job.company | escape }}</span>
+          <span class="tl-role">{{ job.role | escape }}</span>
           <span class="tl-toggle" aria-hidden="true"></span>
         </button>
         <div class="tl-body"><div>
           <ul>
-            <li>Full territory responsibility for trend-leading and luxury accounts: client management, new business and outlet prioritisation.</li>
-            <li>Selected to build the Frankfurt territory, not actively developed for around four years; grew the account base in each territory, Frankfurt and Stuttgart, from 70–80 to around 110.</li>
-            <li>Led both territories in parallel, each with its own budget responsibility.</li>
-            <li>Segmented the portfolio by priority and volume; around 80–100 contract negotiations and regular brand activations.</li>
+{%- for point in job.points %}
+            <li>{{ point | escape }}</li>
+{%- endfor %}
           </ul>
         </div></div>
       </li>
-      <li class="tl-item">
-        <button class="tl-head" type="button" aria-expanded="false">
-          <span class="tl-years">2021 – 2023</span>
-          <span class="tl-co">Louis Vuitton</span>
-          <span class="tl-role">Team Manager, Menswear, Watches &amp; Travel · Stuttgart</span>
-          <span class="tl-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="tl-body"><div>
-          <ul>
-            <li>Led a team of 12 in a store of 20, with day-to-day responsibility for store operations.</li>
-            <li>Conducted recruiting interviews.</li>
-            <li>Assortment decisions, annual planning and client events.</li>
-            <li>Stock, replenishment and regional VM standards.</li>
-          </ul>
-        </div></div>
-      </li>
-      <li class="tl-item">
-        <button class="tl-head" type="button" aria-expanded="false">
-          <span class="tl-years">2020 – 2021</span>
-          <span class="tl-co">Le Grand Bellevue</span>
-          <span class="tl-role">Assistant Front Office Manager · Gstaad</span>
-          <span class="tl-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="tl-body"><div>
-          <ul>
-            <li>Deputy head of front office, guest services, valet and concierge, a team of 10.</li>
-            <li>Five-star superior hotel with 57 rooms and suites.</li>
-          </ul>
-        </div></div>
-      </li>
-      <li class="tl-item">
-        <button class="tl-head" type="button" aria-expanded="false">
-          <span class="tl-years">2019 – 2020</span>
-          <span class="tl-co">Montblanc</span>
-          <span class="tl-role">Assistant Store Manager · Zürich</span>
-          <span class="tl-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="tl-body"><div>
-          <ul>
-            <li>Regularly deputised for the store manager in a team of seven; responsible for rostering, boutique KPIs and onboarding.</li>
-            <li>Raised the average transaction value by 40%.</li>
-            <li>Local client share from around 70% to over 80%.</li>
-          </ul>
-        </div></div>
-      </li>
-      <li class="tl-item">
-        <button class="tl-head" type="button" aria-expanded="false">
-          <span class="tl-years">2016 – 2018</span>
-          <span class="tl-co">Hospitality</span>
-          <span class="tl-role">Three cities, three roles</span>
-          <span class="tl-toggle" aria-hidden="true"></span>
-        </button>
-        <div class="tl-body"><div>
-          <ul>
-            <li>Kempinski Frankfurt: Rooms Division Management Trainee.</li>
-            <li>Radisson Blu Berlin: Front Office Agent.</li>
-            <li>Steigenberger Munich: Shift Leader in the opening team.</li>
-          </ul>
-        </div></div>
-      </li>
+{%- endfor %}
     </ol>
   </div>
 </section>
 
 <section class="background">
   <div class="wrap">
-    <div class="label">Background</div>
+    <div class="label">{{ d.background.label | escape }}</div>
     <div class="details">
+{%- for b in d.background.blocks %}
       <div class="detail">
-        <div class="label">Education</div>
-        <p>Bachelor in International Hotel Management<small>Les Roches Global Hospitality Education, 2012–2015</small></p>
-        <p>Exchange semester<small>Glion Institute of Higher Education, 2014</small></p>
+        <div class="label">{{ b.label | escape }}</div>
+{%- for e in b.entries %}
+        <p>{{ e.text }}{% if e.note %}<small>{{ e.note | escape }}</small>{% endif %}</p>
+{%- endfor %}
       </div>
-      <div class="detail">
-        <div class="label">Languages</div>
-        <p>German and English, both at native level</p>
-      </div>
-      <div class="detail">
-        <div class="label">Systems</div>
-        <p>Salesforce&nbsp;CRM, Opera&nbsp;PMS, Microsoft&nbsp;365</p>
-      </div>
-      <div class="detail">
-        <div class="label">Military Service</div>
-        <p>Sergeant, Swiss&nbsp;Armed&nbsp;Forces<small>Squad leader</small></p>
-      </div>
+{%- endfor %}
     </div>
   </div>
 </section>
 
 <section class="band" id="expertise">
   <div class="band-image">
-    <img src="images/hans-baer-focus.webp" alt="Hans X. Baer" width="1000" height="1200" loading="lazy">
+    <img src="{{ d.expertise.image }}" alt="{{ d.expertise.image_alt | escape }}" width="1000" height="1200" loading="lazy">
   </div>
   <div class="band-copy">
-    <div class="label">Expertise</div>
-    <h2>What I know best</h2>
+    <div class="label">{{ d.expertise.label | escape }}</div>
+    <h2>{{ d.expertise.heading | escape }}</h2>
+{%- for p in d.expertise.pillars %}
     <div class="pillar">
-      <h3>Retail leadership</h3>
-      <p>Leading a team on the shop floor: hiring the right people, setting standards and running the store day to day, as I did at Montblanc and Louis Vuitton.</p>
+      <h3>{{ p.title | escape }}</h3>
+      <p>{{ p.text | escape }}</p>
     </div>
-    <div class="pillar">
-      <h3>Commercial strategy</h3>
-      <p>Deciding where time and budget go. At Diageo I developed two territories, chose which accounts to prioritise and negotiated the agreements behind them.</p>
-    </div>
-    <div class="pillar">
-      <h3>Guest experience</h3>
-      <p>Knowing guests well enough that they come back. It started at the hotel front office and still shapes how I approach clienteling and events.</p>
-    </div>
+{%- endfor %}
   </div>
 </section>
 
 <section class="travel" id="travel">
   <div class="wrap">
-    <div class="label">Travel</div>
-    <h2>Away from work</h2>
-    <p class="travel-text">I was given the chance to travel from a young age, and much of it took me to Asia. That was more than twenty years ago, before the world felt as connected as it does now. For a European, Asia was still far away and far less familiar than it seems today.</p>
-    <p class="travel-text">Those trips shaped how I see things. What stays with me is rarely the sights, but the small things: how a city starts its day, how people host, what ends up on the table. <span style="white-space:nowrap">I still travel whenever I can.</span></p>
+    <div class="label">{{ d.travel.label | escape }}</div>
+    <h2>{{ d.travel.heading | escape }}</h2>
+{%- for p in d.travel.paragraphs %}
+    <p class="travel-text">{{ p }}</p>
+{%- endfor %}
     <div class="gallery">
-      <div class="shot"><img src="images/singapore.webp" alt="Marina Bay at sunset, Singapore" width="1600" height="1200" loading="lazy"></div>
-      <div class="shot"><img src="images/nusa-penida.webp" alt="Kelingking cliff, Nusa Penida" width="1600" height="1200" loading="lazy"></div>
-      <div class="shot"><img src="images/dumplings.webp" alt="Xiao long bao in a bamboo steamer" width="1600" height="1200" loading="lazy"></div>
-      <div class="shot"><img src="images/beach.webp" alt="Boats on a beach in Indonesia" width="1600" height="1200" loading="lazy"></div>
+{%- for photo in d.travel.photos %}
+      <div class="shot"><img src="{{ photo.image }}" alt="{{ photo.alt | escape }}" width="1600" height="1200" loading="lazy"></div>
+{%- endfor %}
     </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="wrap">
-    <blockquote>Those who think in boundaries will always be defined by them. True growth comes from the connections we build beyond them.</blockquote>
+    <blockquote>{{ d.contact.quote | escape }}</blockquote>
     <cite>Hans X.<span style="margin-left:-.12em"> </span>Baer</cite>
     <div class="social">
-      <a class="ico" href="mailto:hans@hansbaer.ch?subject=Enquiry%20via%20hansbaer.ch" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a>
-      <a class="ico" href="https://www.linkedin.com/in/baerhans/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="9.5" width="3.2" height="10.5"/><circle cx="5.6" cy="5.6" r="1.9"/><path d="M10.2 9.5h3.1v1.5c.5-.9 1.7-1.8 3.4-1.8 3.2 0 3.8 2.1 3.8 4.8V20h-3.2v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20h-3.2z"/></svg></a>
+      <a class="ico" href="mailto:{{ d.contact.email }}?subject=Enquiry%20via%20hansbaer.ch" aria-label="Email" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></a>
+      <a class="ico" href="{{ d.contact.linkedin | escape }}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="4" y="9.5" width="3.2" height="10.5"/><circle cx="5.6" cy="5.6" r="1.9"/><path d="M10.2 9.5h3.1v1.5c.5-.9 1.7-1.8 3.4-1.8 3.2 0 3.8 2.1 3.8 4.8V20h-3.2v-5.3c0-1.3 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8V20h-3.2z"/></svg></a>
     </div>
   </div>
 </section>

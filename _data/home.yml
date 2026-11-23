@@ -1,0 +1,131 @@
+# Inhalte der Startseite von hansbaer.ch. Bearbeitung über Pages CMS (app.pagescms.org).
+# Felder mit "(HTML erlaubt)" dürfen einfache Tags wie <br> oder <em> enthalten.
+seo:
+  title: "Hans X. Baer — Where service meets sales"
+  description: "Hans X. Baer — born in Zürich, based in Frankfurt. A decade in hospitality, luxury retail and premium spirits, with Diageo, Louis Vuitton and Montblanc."
+  share_description: "Hospitality shaped me and led me to luxury retail and premium spirits. Born in Zürich, based in Frankfurt."
+  share_image: "/images/og.jpg"
+  share_image_alt: "Portrait of Hans X. Baer"
+
+hero:
+  label: "Hospitality · Luxury Retail · Spirits"
+  name_first: "Hans X."
+  name_last: "Baer"
+  tagline: "Hospitality shaped me and led me to luxury retail and premium spirits. What hasn’t changed is what I enjoy most: working with people from all kinds of backgrounds and cultures."
+  facts:
+    - "Born in Zürich"
+    - "Based in Frankfurt"
+    - "German & English"
+  image: "/images/hans-baer-suit.webp"
+  image_alt: "Portrait of Hans X. Baer in a pinstripe suit"
+
+about:
+  label: "About"
+  heading: "From guest to host."
+  paragraphs:
+    - "I grew up in Switzerland with Swiss and Asian roots. My surroundings, at school and at home, were always international. Growing up, I stayed in some beautiful hotels, and at some point I became more interested in the other side of the front desk: what it takes to be a good host."
+    - "That led me to study hotel management at Les Roches and to start out in hotel front offices in Frankfurt, Berlin, Munich and Gstaad. From there I moved into luxury retail, first at Montblanc in Zürich, then at Louis Vuitton in Stuttgart, and most recently to Diageo, where I looked after premium bars, restaurants and hotels in two territories."
+    - "Whether at a front desk, in a boutique or with a bar team, the job has felt much the same to me: look after people properly, and set the standard yourself."
+
+figures:
+  - number: "~110"
+    text: 'Accounts per Diageo territory in Frankfurt and Stuttgart, <span style="white-space:nowrap">each up from 70–80</span>'
+  - number: "20"
+    text: 'Store team at Louis Vuitton Stuttgart, with <span style="white-space:nowrap">day-to-day</span> lead of store operations'
+  - number: "+40%"
+    text: "Average transaction value at Montblanc Zürich"
+
+experience:
+  label: "Experience"
+  heading: "A decade in hospitality, <br>luxury retail and spirits"
+  jobs:
+    - years: "2023 – 2026"
+      company: "Diageo"
+      role: "Account Manager, Trend Leading Accounts · Frankfurt & Stuttgart"
+      points:
+        - "Full territory responsibility for trend-leading and luxury accounts: client management, new business and outlet prioritisation."
+        - "Selected to build the Frankfurt territory, not actively developed for around four years; grew the account base in each territory, Frankfurt and Stuttgart, from 70–80 to around 110."
+        - "Led both territories in parallel, each with its own budget responsibility."
+        - "Segmented the portfolio by priority and volume; around 80–100 contract negotiations and regular brand activations."
+    - years: "2021 – 2023"
+      company: "Louis Vuitton"
+      role: "Team Manager, Menswear, Watches & Travel · Stuttgart"
+      points:
+        - "Led a team of 12 in a store of 20, with day-to-day responsibility for store operations."
+        - "Conducted recruiting interviews."
+        - "Assortment decisions, annual planning and client events."
+        - "Stock, replenishment and regional VM standards."
+    - years: "2020 – 2021"
+      company: "Le Grand Bellevue"
+      role: "Assistant Front Office Manager · Gstaad"
+      points:
+        - "Deputy head of front office, guest services, valet and concierge, a team of 10."
+        - "Five-star superior hotel with 57 rooms and suites."
+    - years: "2019 – 2020"
+      company: "Montblanc"
+      role: "Assistant Store Manager · Zürich"
+      points:
+        - "Regularly deputised for the store manager in a team of seven; responsible for rostering, boutique KPIs and onboarding."
+        - "Raised the average transaction value by 40%."
+        - "Local client share from around 70% to over 80%."
+    - years: "2016 – 2018"
+      company: "Hospitality"
+      role: "Three cities, three roles"
+      points:
+        - "Kempinski Frankfurt: Rooms Division Management Trainee."
+        - "Radisson Blu Berlin: Front Office Agent."
+        - "Steigenberger Munich: Shift Leader in the opening team."
+
+background:
+  label: "Background"
+  blocks:
+    - label: "Education"
+      entries:
+        - text: "Bachelor in International Hotel Management"
+          note: "Les Roches Global Hospitality Education, 2012–2015"
+        - text: "Exchange semester"
+          note: "Glion Institute of Higher Education, 2014"
+    - label: "Languages"
+      entries:
+        - text: "German and English, both at native level"
+    - label: "Systems"
+      entries:
+        - text: "Salesforce&nbsp;CRM, Opera&nbsp;PMS, Microsoft&nbsp;365"
+    - label: "Military Service"
+      entries:
+        - text: "Sergeant, Swiss&nbsp;Armed&nbsp;Forces"
+          note: "Squad leader"
+
+expertise:
+  label: "Expertise"
+  heading: "What I know best"
+  image: "/images/hans-baer-focus.webp"
+  image_alt: "Hans X. Baer"
+  pillars:
+    - title: "Retail leadership"
+      text: "Leading a team on the shop floor: hiring the right people, setting standards and running the store day to day, as I did at Montblanc and Louis Vuitton."
+    - title: "Commercial strategy"
+      text: "Deciding where time and budget go. At Diageo I developed two territories, chose which accounts to prioritise and negotiated the agreements behind them."
+    - title: "Guest experience"
+      text: "Knowing guests well enough that they come back. It started at the hotel front office and still shapes how I approach clienteling and events."
+
+travel:
+  label: "Travel"
+  heading: "Away from work"
+  paragraphs:
+    - "I was given the chance to travel from a young age, and much of it took me to Asia. That was more than twenty years ago, before the world felt as connected as it does now. For a European, Asia was still far away and far less familiar than it seems today."
+    - 'Those trips shaped how I see things. What stays with me is rarely the sights, but the small things: how a city starts its day, how people host, what ends up on the table. <span style="white-space:nowrap">I still travel whenever I can.</span>'
+  photos:
+    - image: "/images/singapore.webp"
+      alt: "Marina Bay at sunset, Singapore"
+    - image: "/images/nusa-penida.webp"
+      alt: "Kelingking cliff, Nusa Penida"
+    - image: "/images/dumplings.webp"
+      alt: "Xiao long bao in a bamboo steamer"
+    - image: "/images/beach.webp"
+      alt: "Boats on a beach in Indonesia"
+
+contact:
+  quote: "Those who think in boundaries will always be defined by them. True growth comes from the connections we build beyond them."
+  email: "hans@hansbaer.ch"
+  linkedin: "https://www.linkedin.com/in/baerhans/"
