@@ -113,3 +113,50 @@ content:
           - { name: share_description, label: Beschreibung in Link-Vorschauen, type: text }
           - { name: share_image, label: Vorschaubild, type: image, description: "1024 × 1024 px, JPG" }
           - { name: share_image_alt, label: Alt-Text des Vorschaubilds, type: string }
+  - name: site
+    label: Menü & Footer
+    type: file
+    path: _data/site.yml
+    fields:
+      - { name: name, label: Name (Zurück-Link auf Unterseiten), type: string }
+      - { name: copyright, label: Copyright-Zeile, type: string }
+      - { name: legal_label, label: Text des Impressum-Links, type: string }
+      - name: nav
+        label: Menüpunkte
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Text, type: string }
+          - name: section
+            label: Ziel-Abschnitt
+            type: select
+            options:
+              values: [about, experience, expertise, travel, contact]
+  - name: legal
+    label: Impressum & Datenschutz
+    type: file
+    path: _data/legal.yml
+    fields:
+      - { name: title, label: Überschrift, type: string }
+      - { name: label, label: Zeile über der Überschrift, type: string }
+      - { name: seo_title, label: Seitentitel (Browser-Tab), type: string }
+      - { name: privacy_link, label: Text des Links oben rechts, type: string }
+      - name: sections
+        label: Abschnitte
+        type: object
+        list: true
+        fields:
+          - { name: heading, label: Überschrift, type: string }
+          - { name: anchor, label: Anker, type: string, description: "Nur beim Datenschutz-Abschnitt: privacy (Ziel des Links oben rechts)" }
+          - { name: body, label: Text, type: rich-text }
+      - { name: updated, label: Stand, type: string, description: "z.B. November 2026" }
+  - name: notfound
+    label: Fehlerseite (404)
+    type: file
+    path: _data/notfound.yml
+    fields:
+      - { name: label, label: Zeile über der Überschrift, type: string }
+      - { name: heading, label: Überschrift, type: string }
+      - { name: text, label: Text, type: text }
+      - { name: button, label: Button, type: string }
+      - { name: seo_title, label: Seitentitel (Browser-Tab), type: string }

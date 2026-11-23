@@ -1,0 +1,15 @@
+# Menü und Footer von hansbaer.ch. Bearbeitung über Pages CMS (app.pagescms.org).
+name: Hans X. Baer
+copyright: © 2026 Hans X. Baer
+legal_label: Legal Notice & Privacy
+nav:
+- label: About
+  section: about
+- label: Experience
+  section: experience
+- label: Expertise
+  section: expertise
+- label: Travel
+  section: travel
+- label: Social
+  section: contact

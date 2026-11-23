@@ -1,7 +1,7 @@
 ---
 layout: null
 ---
-{% assign d = site.data.home %}<!doctype html>
+{% assign d = site.data.home %}{% assign s = site.data.site %}<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -366,11 +366,9 @@ layout: null
 <header class="nav">
   <div class="wrap">
     <nav class="links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#travel">Travel</a>
-      <a href="#contact">Social</a>
+{%- for n in s.nav %}
+      <a href="#{{ n.section }}">{{ n.label | escape }}</a>
+{%- endfor %}
     </nav>
   </div>
 </header>
@@ -502,7 +500,7 @@ layout: null
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Hans X. Baer<span class="sep"> · </span><a href="impressum.html" style="text-decoration:none">Legal Notice &amp; Privacy</a></span>
+    <span>{{ s.copyright | escape }}<span class="sep"> · </span><a href="impressum.html" style="text-decoration:none">{{ s.legal_label | escape }}</a></span>
   </div>
 </footer>
 

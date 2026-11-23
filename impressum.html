@@ -1,9 +1,12 @@
-<!doctype html>
+---
+layout: null
+---
+{% assign l = site.data.legal %}{% assign s = site.data.site %}<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Legal Notice &amp; Privacy — Hans X. Baer</title>
+<title>{{ l.seo_title | escape }}</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%23121c25%22/%3E%3Ctext x=%2232%22 y=%2242%22 font-family=%22Georgia,serif%22 font-size=%2221%22 fill=%22%23c9ab7e%22 text-anchor=%22middle%22 letter-spacing=%221%22%3EHXB%3C/text%3E%3C/svg%3E">
 <style>
@@ -31,50 +34,24 @@
 <body>
 <header>
   <div class="wrap">
-    <a href="./">← Hans X. Baer</a>
-    <a href="#privacy">Privacy</a>
+    <a href="./">← {{ s.name | escape }}</a>
+    <a href="#privacy">{{ l.privacy_link | escape }}</a>
   </div>
 </header>
 <main>
   <div class="wrap">
-    <div class="label">Legal</div>
-    <h1>Legal Notice &amp; Privacy</h1>
+    <div class="label">{{ l.label | escape }}</div>
+    <h1>{{ l.title | escape }}</h1>
+{%- for sec in l.sections %}
 
-    <h2 style="margin-top:0;padding-top:0;border-top:0">Legal Notice</h2>
-    <h3>Information pursuant to § 5 DDG (German Digital Services Act)</h3>
-    <p>Hans X. Baer<br>60311 Frankfurt am Main<br>Germany</p>
-    <h3>Contact</h3>
-    <p>Email: <a href="mailto:hans@hansbaer.ch">hans@hansbaer.ch</a></p>
-    <h3>Responsible for content pursuant to § 18 (2) MStV</h3>
-    <p>Hans X. Baer, address as above</p>
+    <h2{% if sec.anchor and sec.anchor != "" %} id="{{ sec.anchor }}"{% endif %}{% if forloop.first %} style="margin-top:0;padding-top:0;border-top:0"{% endif %}>{{ sec.heading | escape }}</h2>{{ sec.body }}
+{%- endfor %}
 
-    <h2 id="privacy">Privacy Notice</h2>
-    <h3>Controller</h3>
-    <p>The controller responsible for the processing of personal data on this website is Hans X. Baer, 60311 Frankfurt am Main, Germany, email: <a href="mailto:hans@hansbaer.ch">hans@hansbaer.ch</a>.</p>
-
-    <h3>Hosting</h3>
-    <p>This website is hosted by GitHub Pages, a service of GitHub, Inc., USA. When you visit the website, the hosting provider processes technically necessary data, in particular your IP address, the date and time of access, the page requested and browser and device information, in order to deliver the website securely and reliably. The legal basis is Art. 6 (1) (f) GDPR. GitHub, Inc. is certified under the EU-U.S. Data Privacy Framework. Further information can be found in the GitHub privacy statement.</p>
-
-    <h3>Fonts and images</h3>
-    <p>The fonts and images used on this website are hosted together with the website itself. No connection is made to servers operated by Google or other font or media providers.</p>
-
-    <h3>Cookies and analytics</h3>
-    <p>The operator of this website does not set any cookies of their own and does not use any analytics, tracking or advertising services.</p>
-
-    <h3>Contact by email</h3>
-    <p>If you get in touch by email, the information you provide will be used solely to handle your enquiry and will not be passed on without your consent. The legal basis is Art. 6 (1) (b) or (f) GDPR.</p>
-
-    <h3>Link to LinkedIn</h3>
-    <p>This website contains a simple link to LinkedIn. No data is transferred to LinkedIn when you visit this website; you are only redirected there once you click the link. The privacy policy of LinkedIn Ireland Unlimited Company applies there.</p>
-
-    <h3>Your rights</h3>
-    <p>You have the right to access, rectification, erasure and restriction of processing of your personal data, the right to data portability and the right to object to processing. To exercise these rights, please use the email address above. You also have the right to lodge a complaint with a data protection supervisory authority, such as the Hessian Commissioner for Data Protection and Freedom of Information.</p>
-
-    <p style="margin-top:40px;color:var(--muted);font-size:13px">Last updated: November 2026</p>
+    <p style="margin-top:40px;color:var(--muted);font-size:13px">Last updated: {{ l.updated | escape }}</p>
   </div>
 </main>
 <footer>
-  <div class="wrap">© 2026 Hans X. Baer · hansbaer.ch</div>
+  <div class="wrap">{{ s.copyright | escape }} · hansbaer.ch</div>
 </footer>
 </body>
 </html>
